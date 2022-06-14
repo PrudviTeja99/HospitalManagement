@@ -1,0 +1,59 @@
+<div style="margin: 20px;">
+    <div class="container">
+      <div class="row">
+        <div>
+          <h1><b>Enter Patient Information</b></h1>
+        </div>
+        <div>
+          <form>
+            <div class="form-group">
+              <label><b>Patient Id</b></label>
+              <input name="id" [(ngModel)]="patient.id" required="true" type="number" class="form-control" placeholder="Patient Id">
+            </div>
+            <div class="form-group">
+              <label><b>Patient Name</b></label>
+              <input name="name" [(ngModel)]="patient.name" required="true" type="text" class="form-control" placeholder="Patient name">
+            </div>
+            <div class="form-group">
+              <label><b>Age</b></label>
+              <input name="age" required="true" [(ngModel)]="patient.age" type="number" class="form-control" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+              <label for="gender"><b>Choose Gender</b></label>
+              <select id="gender" class="form-control" [(ngModel)]="patient.gender" name="gender">
+                <option value="" disabled selected>Select your option</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for=""><b>Doctor Name</b></label>
+              <select class="form-control" [(ngModel)]="patient.doctor_name" name="name">
+                <option value="" disabled selected>Choose Doctor</option>
+                <option *ngFor="let doctor of doctors" value="{{doctor.name}}">{{doctor.name}}</option>
+            </select>
+          </div>
+            <div class="form-group">
+              <label for=""><b>Date Of Admission</b></label>
+              <input name="field" required="true" [(ngModel)]="patient.date_of_visit" type="date" class="form-control" placeholder="Enter date of admission">
+            </div>
+            
+            <div class="form-group">
+              <label for=""><b>Prescription</b></label>
+              <input name="Precription" [(ngModel)]="patient.prescription" name="prescription" required="true" type="text" class="form-control" placeholder="Enter prescription">
+            </div>
+          
+            <div class="float-start">
+              <button type="submit" (click)="savePatient()" class="btn btn-primary">Admit</button>
+            </div>
+            <div class="float-start">
+              <a routerLink="/" class="btn btn-danger ms-2">Close</a>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <pre>{{patient|json}}</pre> -->

@@ -1,0 +1,45 @@
+<div>
+<div class="container" >
+  <form class="form-inline mt-4">
+    <div class="mb-2">
+      <label for="doctor"><b>Select Doctor</b></label>
+      <select class="form-control" [(ngModel)]="doc.name" name="name">
+        <option [value]="docs.name" *ngFor="let docs of doctor">{{docs.name}}</option>
+      </select>
+    </div>
+    <div>
+      <button class="float-start btn btn-primary" type="submit" (click)="showDoctorDetails()">Search
+          </button>
+    </div>
+    <div>
+      <a class="float-start" routerLink="/" class="btn btn-danger ms-2">Close</a> 
+    </div>
+  </form>
+</div>
+<!--  -->
+<div *ngIf="isClicked">
+  <div class="p-5 text-center">
+    <div class="mask" style="background-color:#ffffff;">
+    <div class="d-flex justify-content-center align-items-center">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Specialization</th>
+                <th scope="col">Patients Attended</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{doc.name}}</td>
+                <td>{{doc.field}}</td>
+                <td>{{doc.patient_count}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    </div>
+</div>
+</div>
+  <!--  -->

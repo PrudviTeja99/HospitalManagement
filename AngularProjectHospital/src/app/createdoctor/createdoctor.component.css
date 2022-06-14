@@ -1,0 +1,14 @@
+.bg{
+    height:100vh;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.container{
+    height: auto;
+    background-repeat: no-repeat;
+}
+div{
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

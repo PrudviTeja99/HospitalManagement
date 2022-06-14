@@ -1,0 +1,23 @@
+a{
+    font-weight:bolder;
+}
+
+a:hover{
+    color: black;
+    background-color: grey;
+    
+}
+
+
+
+label{
+    color: white;
+}
+.collapse{
+    justify-content: end;
+}
+
+nav{
+    padding: 5px;
+    background-color: black;
+}
